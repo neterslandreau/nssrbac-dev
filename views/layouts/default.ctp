@@ -27,9 +27,7 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
 		echo $this->Html->css('cake.generic');
-
 		echo $scripts_for_layout;
 	?>
 </head>
@@ -40,7 +38,10 @@
 		</div>
 		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+			<?php
+				echo $this->Session->flash();
+				echo $this->Session->flash('auth');
+			?>
 
 			<?php echo $content_for_layout; ?>
 
@@ -54,6 +55,6 @@
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); ?>
 </body>
 </html>
